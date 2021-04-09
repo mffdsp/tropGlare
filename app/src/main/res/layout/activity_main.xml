@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relativeLayout1"
+    android:background="#FFFFFF"
+    tools:context="com.tropglare.MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient1"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:padding="12dp"
+        android:layout_alignParentTop="true"
+        android:text="TropGlare"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp"
+        android:textAllCaps="false"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="2dp"
+        android:textSize="12sp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="1dp"
+        android:text="Versão 1.0.1" />
+
+    <ImageView
+        android:id="@+id/mainImg"
+        android:layout_width="94dp"
+        android:layout_height="101dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="1dp"
+        android:src="@drawable/grilu_nobg" />
+
+
+    <ScrollView
+        android:id="@+id/ScrollView1"
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:foregroundGravity="center"
+        android:layout_height="240dp"
+        tools:layout_editor_absoluteX="0dp"
+        android:fadeScrollbars="false"
+        android:scrollbarThumbVertical="@drawable/scrollbar"
+        android:layout_centerInParent="true"
+        tools:layout_editor_absoluteY="0dp">
+
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+
+        app:columnCount="1"
+        app:useDefaultMargins="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rowCount="2"
+        app:rowOrderPreserved="false">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_margin="6dp"
+            android:background="@drawable/border"
+            android:onClick="b1"
+            android:text="Calcular Índice DGP"
+            android:gravity="center"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_margin="6dp"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:onClick="b2"
+            android:text="Calcular Índice DGPs"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_margin="6dp"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:onClick="b3"
+            android:text="Calcular Índice DGI"
+            android:textAllCaps="false" />
+
+
+    </androidx.gridlayout.widget.GridLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
