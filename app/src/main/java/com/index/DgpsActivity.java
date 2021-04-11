@@ -1,6 +1,7 @@
 package com.index;
 
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -34,6 +36,7 @@ public class DgpsActivity extends AppCompatActivity {
         )));
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public void b1 (View v){
 
         try {
@@ -56,7 +59,7 @@ public class DgpsActivity extends AppCompatActivity {
                 throw new Exception("NaN exception");
             }
 
-            if(Double.isInfinite(result)){
+            if(!Double.isFinite(result)){
                 HandlerTool.newSnack("Há um erro na entrada. Por favor verifique-a.", findViewById(R.id.dgi_view), Color.RED);
                 tv5.setVisibility(View.INVISIBLE);
                 throw new Exception("NaN exception");
@@ -82,12 +85,6 @@ public class DgpsActivity extends AppCompatActivity {
         boolean perturbador =  result >= 0.4 && result < 0.45;
         boolean intoleravel = result >= 0.45;
 
-        if(result != Double.POSITIVE_INFINITY){
-            Snackbar snackbar = Snackbar.make(findViewById(R.id.dgps_ac), "Há um erro na entrada. Por favor verifique-a.", Snackbar.LENGTH_SHORT);
-            snackbar.getView().setBackgroundColor(Color.parseColor("#DAA520"));
-            snackbar.show();
-            return;
-        }
         int color = 0;
         String finalText = "";
 
@@ -109,7 +106,7 @@ public class DgpsActivity extends AppCompatActivity {
     }
 
     public void hintOnClick(View v){
-        Snackbar snackbar = Snackbar.make(findViewById(R.id.dgps_ac), "Clique nos textos das variáveis para informações adicionais", Snackbar.LENGTH_SHORT);
+        Snackbar snackbar = Snackbar.make(findViewById(R.id.dgps_ac), "Clique nos textos das variáveis para informações adicionais.", Snackbar.LENGTH_SHORT);
         snackbar.getView().setBackgroundColor(Color.parseColor("#DAA520"));
         snackbar.show();
 

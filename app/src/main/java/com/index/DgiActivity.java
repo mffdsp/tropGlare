@@ -1,6 +1,7 @@
 package com.index;
 
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -39,6 +41,7 @@ public class DgiActivity extends AppCompatActivity {
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public void b1 (View v){
 
         try {
@@ -74,7 +77,7 @@ public class DgiActivity extends AppCompatActivity {
                 throw new Exception("NaN exception");
             }
 
-            if(Double.isInfinite(result)){
+            if(!Double.isFinite(result)){
                 HandlerTool.newSnack("Há um erro na entrada. Por favor verifique-a.", findViewById(R.id.dgi_view), Color.RED);
                 tv5.setVisibility(View.INVISIBLE);
                 throw new Exception("NaN exception");

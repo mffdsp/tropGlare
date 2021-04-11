@@ -1,8 +1,10 @@
 package com.index;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -34,6 +36,7 @@ public class DgpActivity extends AppCompatActivity {
         )));
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public void b1 (View v){
 
         try {
@@ -74,7 +77,7 @@ public class DgpActivity extends AppCompatActivity {
                 throw new Exception("NaN exception");
             }
 
-            if(Double.isInfinite(result)){
+            if(!Double.isFinite(result)){
                 HandlerTool.newSnack("Há um erro na entrada. Por favor verifique-a.", findViewById(R.id.dgi_view), Color.RED);
                 tv5.setVisibility(View.INVISIBLE);
                 throw new Exception("NaN exception");
