@@ -10,6 +10,7 @@
     tools:layout_editor_absoluteY="0dp"
     android:fillViewport="true"
     android:layout_width="match_parent"
+    android:id="@+id/dgp_ac"
     android:layout_height="match_parent"
     tools:ignore="DuplicateIds">
 
@@ -57,6 +58,9 @@
                 android:id="@+id/tv1"
                 android:text="Valor de Ev:"
                 android:textSize="14sp"
+                android:onClick="tv1"
+                android:clickable="true"
+                android:focusable="true"
                 android:gravity="center"
                 android:layout_margin="16dp"
                 android:layout_height="40dp"
@@ -67,6 +71,7 @@
                 android:layout_width="71dp"
                 android:layout_height="40dp"
                 android:textSize="14sp"
+                android:hint="lux"
                 android:layout_alignBottom="@id/tv1"
                 android:ems="10"
                 android:gravity="center_horizontal"
@@ -90,6 +95,9 @@
                 android:id="@+id/tv2"
                 android:text="Valor de L:"
                 android:textSize="14sp"
+                android:onClick="tv2"
+                android:clickable="true"
+                android:focusable="true"
                 android:gravity="center"
                 android:layout_margin="16dp"
                 android:layout_height="40dp"
@@ -100,6 +108,7 @@
                 android:layout_width="71dp"
                 android:layout_height="40dp"
                 android:textSize="14sp"
+                android:hint="cd/m"
                 android:layout_alignBottom="@id/tv1"
                 android:ems="10"
                 android:gravity="center_horizontal"
@@ -134,6 +143,10 @@
                 android:layout_width="71dp"
                 android:layout_height="40dp"
                 android:textSize="14sp"
+                android:onClick="tv3"
+                android:clickable="true"
+                android:focusable="true"
+                android:hint="sr"
                 android:layout_alignBottom="@id/tv1"
                 android:ems="10"
                 android:gravity="center_horizontal"
@@ -159,6 +172,9 @@
                 android:text="Valor de P:"
                 android:textSize="14sp"
                 android:gravity="center"
+                android:onClick="tv4"
+                android:clickable="true"
+                android:focusable="true"
                 android:layout_margin="16dp"
                 android:layout_height="40dp"
                 android:layout_width="120dp" />
@@ -191,7 +207,17 @@
         android:onClick="b1"
         android:text="Calcular DGP"
         android:textAllCaps="false" />
-
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="1dp"
+        android:onClick="hintOnClick"
+        app:srcCompat="@android:drawable/ic_menu_help" />
 </RelativeLayout>
 
 </ScrollView>

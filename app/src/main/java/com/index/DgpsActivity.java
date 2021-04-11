@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -96,4 +97,14 @@ public class DgpsActivity extends AppCompatActivity {
         tv.setBackgroundColor(color);
     }
 
+    public void hintOnClick(View v){
+        Snackbar snackbar = Snackbar.make(findViewById(R.id.dgps_ac), "Clique nos textos das variáveis para informações adicionais", Snackbar.LENGTH_SHORT);
+        snackbar.getView().setBackgroundColor(Color.parseColor("#DAA520"));
+        snackbar.show();
+
+        //Toast.makeText(DgiActivity.this, "Clique nos textos das variáveis para informações adicionais", Toast.LENGTH_SHORT).show();
+    }
+    public void tv1(View v){
+        Toast.makeText(DgpsActivity.this, "Iluminância vertical em lux", Toast.LENGTH_SHORT).show();
+    }
 }

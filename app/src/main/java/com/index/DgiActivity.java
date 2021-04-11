@@ -112,5 +112,27 @@ public class DgiActivity extends AppCompatActivity {
         tv5.setText("ÍNDICE DGI = " + String.format("%.0f", result) + "\n" + finalText);
         tv.setBackgroundColor(color);
     }
+    public void hintOnClick(View v){
+        Snackbar snackbar = Snackbar.make(findViewById(R.id.dgi_ac), "Clique nos textos das variáveis para informações adicionais", Snackbar.LENGTH_SHORT);
+        snackbar.getView().setBackgroundColor(Color.parseColor("#DAA520"));
+        snackbar.show();
+
+       //Toast.makeText(DgiActivity.this, "Clique nos textos das variáveis para informações adicionais", Toast.LENGTH_SHORT).show();
+    }
+    public void tv1(View v){
+        Toast.makeText(DgiActivity.this, "luminância da fonte em cd/m²", Toast.LENGTH_SHORT).show();
+    }
+    public void tv2(View v){
+        Toast.makeText(DgiActivity.this, "luminância média de fundo em cd/m²", Toast.LENGTH_SHORT).show();
+
+    }
+    public void tv3(View v){
+        Toast.makeText(DgiActivity.this, "Valor ângular da fonte visto a olho nu", Toast.LENGTH_SHORT).show();
+
+    }
+    public void tv4(View v){
+        Toast.makeText(DgiActivity.this, "Ângulo sólido da fonte, modificado pela posição do observador em relação à fonte", Toast.LENGTH_SHORT).show();
+
+    }
 
 }

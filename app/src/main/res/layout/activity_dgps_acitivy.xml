@@ -9,6 +9,7 @@
     android:scrollbarThumbVertical="@drawable/scrollbar"
     tools:layout_editor_absoluteY="0dp"
     android:fillViewport="true"
+    android:id="@+id/dgps_ac"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:ignore="DuplicateIds">
@@ -56,6 +57,9 @@
                     android:textColor="#000000"
                     android:id="@+id/tv1"
                     android:text="Valor de Ev:"
+                    android:onClick="tv1"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:textSize="14sp"
                     android:gravity="center"
                     android:layout_margin="16dp"
@@ -68,6 +72,7 @@
                     android:layout_height="40dp"
                     android:textSize="14sp"
                     android:layout_alignBottom="@id/tv1"
+                    android:hint="lux"
                     android:ems="10"
                     android:gravity="center_horizontal"
                     android:inputType="numberSigned|numberDecimal"
@@ -90,6 +95,18 @@
             android:onClick="b1"
             android:text="Calcular DGPs"
             android:textAllCaps="false" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:onClick="hintOnClick"
+            app:srcCompat="@android:drawable/ic_menu_help" />
 
     </RelativeLayout>
 

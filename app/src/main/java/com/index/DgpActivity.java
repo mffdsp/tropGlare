@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.handler.HandlerTool;
@@ -115,4 +116,26 @@ public class DgpActivity extends AppCompatActivity {
         tv.setBackgroundColor(color);
     }
 
+    public void hintOnClick(View v){
+        Snackbar snackbar = Snackbar.make(findViewById(R.id.dgp_ac), "Clique nos textos das variáveis para informações adicionais", Snackbar.LENGTH_SHORT);
+        snackbar.getView().setBackgroundColor(Color.parseColor("#DAA520"));
+        snackbar.show();
+
+        //Toast.makeText(DgiActivity.this, "Clique nos textos das variáveis para informações adicionais", Toast.LENGTH_SHORT).show();
+    }
+    public void tv1(View v){
+        Toast.makeText(DgpActivity.this, "iluminância vertical em lux", Toast.LENGTH_SHORT).show();
+    }
+    public void tv2(View v){
+        Toast.makeText(DgpActivity.this, "luminância em cd/m²", Toast.LENGTH_SHORT).show();
+
+    }
+    public void tv3(View v){
+        Toast.makeText(DgpActivity.this, "Ângulo sólido em esferorradiano", Toast.LENGTH_SHORT).show();
+
+    }
+    public void tv4(View v){
+        Toast.makeText(DgpActivity.this, "Índice de posição de Guth para o campo de visão", Toast.LENGTH_SHORT).show();
+
+    }
 }

@@ -59,7 +59,6 @@
     <androidx.gridlayout.widget.GridLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-
         app:columnCount="1"
         app:useDefaultMargins="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -67,6 +66,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:rowCount="2"
         app:rowOrderPreserved="false">
+
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_margin="6dp"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:onClick="b2"
+            android:text="Calcular Índice DGPs"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/button1"
@@ -79,16 +90,6 @@
             android:gravity="center"
             android:textAllCaps="false" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="fill_parent"
-            android:layout_height="40dp"
-            android:layout_margin="6dp"
-            android:background="@drawable/border"
-            android:gravity="center"
-            android:onClick="b2"
-            android:text="Calcular Índice DGPs"
-            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/button3"
