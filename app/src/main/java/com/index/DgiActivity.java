@@ -73,6 +73,13 @@ public class DgiActivity extends AppCompatActivity {
                 tv5.setVisibility(View.INVISIBLE);
                 throw new Exception("NaN exception");
             }
+
+            if(Double.isInfinite(result)){
+                HandlerTool.newSnack("Há um erro na entrada. Por favor verifique-a.", findViewById(R.id.dgi_view), Color.RED);
+                tv5.setVisibility(View.INVISIBLE);
+                throw new Exception("NaN exception");
+            }
+
             tv5 = findViewById(R.id.tv5);
 
             HandlerTool.hideKeyboard(this);

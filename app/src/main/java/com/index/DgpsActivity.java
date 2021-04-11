@@ -56,6 +56,11 @@ public class DgpsActivity extends AppCompatActivity {
                 throw new Exception("NaN exception");
             }
 
+            if(Double.isInfinite(result)){
+                HandlerTool.newSnack("Há um erro na entrada. Por favor verifique-a.", findViewById(R.id.dgi_view), Color.RED);
+                tv5.setVisibility(View.INVISIBLE);
+                throw new Exception("NaN exception");
+            }
 
             tv5 = findViewById(R.id.tv5);
 
@@ -77,6 +82,12 @@ public class DgpsActivity extends AppCompatActivity {
         boolean perturbador =  result >= 0.4 && result < 0.45;
         boolean intoleravel = result >= 0.45;
 
+        if(result != Double.POSITIVE_INFINITY){
+            Snackbar snackbar = Snackbar.make(findViewById(R.id.dgps_ac), "Há um erro na entrada. Por favor verifique-a.", Snackbar.LENGTH_SHORT);
+            snackbar.getView().setBackgroundColor(Color.parseColor("#DAA520"));
+            snackbar.show();
+            return;
+        }
         int color = 0;
         String finalText = "";
 
